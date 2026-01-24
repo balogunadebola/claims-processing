@@ -1,6 +1,6 @@
 {
     "name": "Python 3",
-    "image": "://mcr.microsoft.com",
+    "image": "python:3.11-bookworm",
     "features": {
         "ghcr.io/devcontainers/features/azure-cli:1": {
             "installBicep": true
