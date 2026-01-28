@@ -229,10 +229,10 @@ def main():
     
     try:
         # Get image path from CLI args or use default
-        test_image_path = sys.argv[1] if len(sys.argv) > 1 else "/workspaces/claims-processing-hack/challenge-0/data/statements/crash1_front.jpeg"
+        test_image_path = sys.argv[1] if len(sys.argv) > 1 else r"C:\Users\HP\Downloads\claims-processing\challenge-0\data\statements\crash1_front.jpeg"
         
         # Create output directory for OCR results
-        output_dir = "/workspaces/claims-processing-hack/challenge-2/ocr_results"
+        output_dir = r"C:\Users\HP\Downloads\claims-processing\challenge-2\ocr_results"
         os.makedirs(output_dir, exist_ok=True)
         
         # Create AI Project Client
@@ -267,9 +267,11 @@ You are designed to be a reliable, accurate OCR processing service for insurance
             except Exception:
                 # Agent doesn't exist, create it
                 base_agent = project_client.agents.create(
-                    agent_name=agent_name,
+                    name=agent_name,
+                    definition=PromptAgentDefinition(
                     model=model_deployment_name,
                     instructions=agent_instructions,
+                )
                 )
                 print(f"✅ Created persistent agent in Foundry: {base_agent.name}")
             
@@ -373,4 +375,3 @@ Provide a summary of what text was found and what it represents."""
 
 if __name__ == "__main__":
     main()
-
