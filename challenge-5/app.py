@@ -31,7 +31,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Default API URL - Container Apps direct URL
-DEFAULT_API_URL = "https://claims-processing-api.orangeforest-dfe25231.swedencentral.azurecontainerapps.io"
+DEFAULT_API_URL = "https://claims-processing-api.delightfuldune-3d1a0610.swedencentral.azurecontainerapps.io"
 
 
 def get_api_url():
